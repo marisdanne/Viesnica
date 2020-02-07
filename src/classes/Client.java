@@ -16,12 +16,12 @@ public class Client extends User{
     private String documentCode;
     private String telNumber;
     
-    public Client(int id, String name, String surname) {
-        super(id, name, surname);
+    public Client(int id, String name, String surname, String password) {
+        super(id, name, surname, password);
     }
     
-    public Client(String personalCode, Date birthday, String country, String documentCode, String telNumber, int id, String name, String surname) {
-        super(id, name, surname);
+    public Client(int id, String name, String surname, String password, String personalCode, Date birthday, String country, String documentCode, String telNumber) {
+        super(id, name, surname, password);
         this.personalCode = personalCode;
         this.birthday = birthday;
         this.country = country;

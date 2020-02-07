@@ -13,11 +13,22 @@ public abstract class User {
     private int id;
     private String name;
     private String surname;
+    private String password;
+    
 
-    public User(int id, String name, String surname) {
+    public User(int id, String name, String surname, String password) {
         this.id = id;
         this.name = name;
         this.surname = surname;
+        this.password = password;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
     
     public int getId() {
@@ -46,8 +57,12 @@ public abstract class User {
 
     @Override
     public String toString() {
-        return "User{" + "id=" + id + ", name=" + name + ", surname=" + surname + '}';
+        return "User{" + "id=" + id + ", name=" + name + ", surname=" + surname + ", password=" + password + '}';
     }
-    
-    
+
+    public void saveToFile(){
+        FileManager fm = new FileManager("user");
+        String user = id + "," + name + "," + surname + "," + password;
+        fm.append(user);
+    }
 }

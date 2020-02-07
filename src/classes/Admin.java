@@ -12,12 +12,12 @@ package classes;
 public class Admin extends User {
     private String role;
 
-    public Admin(int id, String name, String surname) {
-        super(id, name, surname);
+    public Admin(int id, String name, String surname, String password) {
+        super(id, name, surname, password);
     }
 
-    public Admin(String role, int id, String name, String surname) {
-        super(id, name, surname);
+    public Admin(String role, int id, String name, String surname, String password) {
+        super(id, name, surname, password);
         this.role = role;
     }
 
