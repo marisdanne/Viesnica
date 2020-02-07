@@ -129,7 +129,8 @@ public class Login extends javax.swing.JFrame {
             }
         }
             
-        new Message(this, true, "Nice try to login!").setVisible(true);
+        for(int i = 0; i < 100; i++)
+            new Message(this, true, "Nice try to login!").setVisible(true);
     }//GEN-LAST:event_btnLoginActionPerformed
 
     /**
