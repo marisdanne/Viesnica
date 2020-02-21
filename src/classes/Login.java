@@ -119,18 +119,29 @@ public class Login extends javax.swing.JFrame {
         String name = txtName.getText();
         String password = pwPassword.getText();
         
-        FileManager fm = new FileManager("user");
-        ArrayList<User> users = new ArrayList<User>();
-        users = fm.getUsers();
+        Datubaze db = new Datubaze();
+        db.createConnection();
         
-        for(User user : users){
-            if(user.getName().equals(name) && user.getPassword().equals(password)){
-                new Message(this, true, "Very good!").setVisible(true);
-            }
+        
+        if(db.hasUserLoop(name, password)){ // db.hasUser(name, password)
+           new Message(this, true, "Very good!").setVisible(true);
+        }else{
+           new Message(this, true, "Hmm... Something wrong!").setVisible(true);
         }
+        
+        
+//        FileManager fm = new FileManager("user");
+//        ArrayList<User> users = new ArrayList<User>();
+//        users = fm.getUsers();
+//        
+//        for(User user : users){
+//            if(user.getName().equals(name) && user.getPassword().equals(password)){
+//                new Message(this, true, "Very good!").setVisible(true);
+//            }
+//        }
             
-        for(int i = 0; i < 100; i++)
-            new Message(this, true, "Nice try to login!").setVisible(true);
+        
+        //new Message(this, true, "Nice try to login!").setVisible(true);
     }//GEN-LAST:event_btnLoginActionPerformed
 
     /**
